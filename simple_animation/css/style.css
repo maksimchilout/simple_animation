@@ -1,0 +1,231 @@
+.mavic {
+  width: 640px;
+  height: 400px;
+  background: green;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden; }
+
+.mavic__title {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  font-size: 24px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: wheat; }
+
+.mavic-img {
+  -webkit-animation-name: mavic-off;
+  animation-name: mavic-off;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out; }
+
+.mavic:hover .mavic-img {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: mavic-on;
+  animation-name: mavic-on;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.mavic::after,
+.mavic::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s; }
+
+.mavic::after {
+  background: url(../img/img/iphone-front.png);
+  right: 21%;
+  -webkit-transform: translate(0, 200%) rotate(30deg);
+  -ms-transform: translate(0, 200%) rotate(30deg);
+  transform: translate(0, 200%) rotate(30deg);
+  -webkit-animation-name: front-off;
+  animation-name: front-off; }
+
+.mavic::before {
+  background: url(../img/img/iphone-back.png);
+  left: 21%;
+  -webkit-transform: translate(0, 200%) rotate(-30deg);
+  -ms-transform: translate(0, 200%) rotate(-30deg);
+  transform: translate(0, 200%) rotate(-30deg);
+  -webkit-animation-name: back-off;
+  animation-name: back-off; }
+
+.mavic:hover::after,
+.mavic:hover::before {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+.mavic:hover::before {
+  -webkit-animation-name: back-on;
+  animation-name: back-on; }
+
+.mavic:hover::after {
+  -webkit-animation-name: front-on;
+  animation-name: front-on; }
+
+@-webkit-keyframes mavic-on {
+  0% {
+    -webkit-transform: translateY(0deg);
+    transform: translateY(0deg); }
+  100% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%); } }
+
+@keyframes mavic-on {
+  0% {
+    -webkit-transform: translateY(0deg);
+    transform: translateY(0deg); }
+  100% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%); } }
+
+@-webkit-keyframes mavic-off {
+  0% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%); }
+  60% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px); }
+  70% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  80% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px); }
+  90% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes mavic-off {
+  0% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%); }
+  60% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px); }
+  70% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  80% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px); }
+  90% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-webkit-keyframes front-on {
+  0% {
+    right: 21%;
+    -webkit-transform: translate(0, 200%) rotate(30deg);
+    transform: translate(0, 200%) rotate(30deg); }
+  60% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    right: 21%; }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    right: 33%; } }
+
+@keyframes front-on {
+  0% {
+    right: 21%;
+    -webkit-transform: translate(0, 200%) rotate(30deg);
+    transform: translate(0, 200%) rotate(30deg); }
+  60% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    right: 21%; }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    right: 33%; } }
+
+@-webkit-keyframes back-on {
+  0% {
+    left: 21%;
+    -webkit-transform: translate(0, 200%) rotate(-30deg);
+    transform: translate(0, 200%) rotate(-30deg); }
+  60% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    left: 21%; }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    left: 33%; } }
+
+@keyframes back-on {
+  0% {
+    left: 21%;
+    -webkit-transform: translate(0, 200%) rotate(-30deg);
+    transform: translate(0, 200%) rotate(-30deg); }
+  60% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    left: 21%; }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    left: 33%; } }
+
+@-webkit-keyframes front-off {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg); }
+  100% {
+    right: 21%;
+    -webkit-transform: translate(0, 200%) rotate(30deg);
+    transform: translate(0, 200%) rotate(30deg); } }
+
+@keyframes front-off {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg); }
+  100% {
+    right: 21%;
+    -webkit-transform: translate(0, 200%) rotate(30deg);
+    transform: translate(0, 200%) rotate(30deg); } }
+
+@-webkit-keyframes back-off {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg); }
+  100% {
+    left: 21%;
+    -webkit-transform: translate(0, 200%) rotate(-30deg);
+    transform: translate(0, 200%) rotate(-30deg); } }
+
+@keyframes back-off {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg); }
+  100% {
+    left: 21%;
+    -webkit-transform: translate(0, 200%) rotate(-30deg);
+    transform: translate(0, 200%) rotate(-30deg); } }
